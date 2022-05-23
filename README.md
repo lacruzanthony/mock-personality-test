@@ -1,2 +1,2 @@
-# client-teamway
+# teamway-client
 Created with CodeSandbox
