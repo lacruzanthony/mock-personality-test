@@ -1,16 +1,15 @@
 import Button from "../button";
-import React from "react";
 
 interface IResult {
-  randomNumber: number;
+  randomNumber: boolean;
   setCardNumber: (cardNumber: number) => void;
-  setIsTestFinish: (setIsTestFinish) => void;
+  setIsTestFinish: (setIsTestFinish: boolean) => void;
 }
 
 interface IMessage {
   msg: string;
   setCardNumber: (cardNumber: number) => void;
-  setIsTestFinish: (setIsTestFinish) => void;
+  setIsTestFinish: (setIsTestFinish: boolean) => void;
 }
 
 const Message = ({ msg, setCardNumber, setIsTestFinish }: IMessage) => {

@@ -4,6 +4,7 @@ import axios from "axios";
 import Button from "./components/button";
 import QuestionList from "./components/question";
 import OptionSet from "./components/option";
+import Result from "./components/result";
 
 interface ICard {
   headline: string;
@@ -46,33 +47,6 @@ export default function App() {
     );
   };
 
-  const Result = () =>
-    Math.random() * (1 - 0) + 0 < 0.5 ? (
-      <>
-        <h3>You are more of an extrovert.</h3>
-        <button
-          onClick={() => {
-            setCardNumber(0);
-            setIsTestFinish(false);
-          }}
-        >
-          Retake test
-        </button>
-      </>
-    ) : (
-      <>
-        <h3>You are more of an introvert.</h3>
-        <button
-          onClick={() => {
-            setCardNumber(0);
-            setIsTestFinish(false);
-          }}
-        >
-          Retake test
-        </button>
-      </>
-    );
-
   return (
     <div className="App">
       <h1>
@@ -83,7 +57,13 @@ export default function App() {
       </h1>
       <Button onClick={onClickHandler} content="Go to test" />
       {!isTestFinish && cards.length > 0 && <Quiz />}
-      {isTestFinish && <Result />}
+      {isTestFinish && (
+        <Result
+          randomNumber={Math.random() * (1 - 0) + 0 < 0.5}
+          setIsTestFinish={setIsTestFinish}
+          setCardNumber={setCardNumber}
+        />
+      )}
     </div>
   );
 }
