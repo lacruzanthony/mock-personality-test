@@ -1,27 +1,38 @@
-import Button from "../button";
+import React from 'react';
+import { ICard } from '../../interfaces';
+import Input from '../input';
 
-interface IQuestion {
-  headline: string;
-  questions: string[];
-  setQuestionSelected: (questionSelected: boolean) => void;
+interface IQuestionList {
+  cards: ICard[];
+  cardNumber: number;
+  setCards: (cards: ICard[]) => void;
+  setIsQuestionSelected: (selected: boolean) => void;
 }
 
-const QuestionList = ({
-  headline,
-  questions,
-  setQuestionSelected
-}: IQuestion) => {
+const QuestionList = ({ cards, setCards, cardNumber, setIsQuestionSelected }: IQuestionList) => {
+  const { headline, questionSelectedID, questions } = cards[cardNumber];
+
+  const onClickHandler = (event: React.SyntheticEvent) => {
+    const inputElement = event.currentTarget as HTMLElement;
+    const questionID = parseInt(inputElement.dataset.idx as string);
+    cards[cardNumber].questionSelectedID = questionID;
+
+    setCards([...cards]);
+    setIsQuestionSelected(true);
+  };
+
   return (
     <>
       <h2>{headline}</h2>
       <ul>
-        {questions.map((q, idx) => (
-          <li key={idx}>
-            <Button
-              onClick={() => {
-                setQuestionSelected(true);
-              }}
-              content={q}
+        {questions.map(({ content, id }) => (
+          <li key={id} className="question-list">
+            <Input
+              id={id}
+              className={id === questionSelectedID ? 'question-selected' : 'question'}
+              onClick={onClickHandler}
+              isSelected={id === questionSelectedID}
+              value={content}
             />
           </li>
         ))}
