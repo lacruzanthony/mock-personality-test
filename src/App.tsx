@@ -1,15 +1,11 @@
-import React from "react";
-import "./styles.css";
-import axios from "axios";
-import Button from "./components/button";
-import QuestionList from "./components/question";
-import OptionSet from "./components/option";
-import Result from "./components/result";
-
-interface ICard {
-  headline: string;
-  questions: string[];
-}
+import React from 'react';
+import './styles.css';
+import axios from 'axios';
+import Button from './components/button';
+import Card from './components/question';
+import OptionSet from './components/option';
+import Result from './components/result';
+import { ICard } from './interfaces';
 
 export default function App() {
   const [cards, setCards] = React.useState<ICard[]>(() => []);
@@ -23,23 +19,18 @@ export default function App() {
   }, [cardNumber]);
 
   const onClickHandler = async () => {
-    const { data } = await axios.get<ICard[]>("http://localhost:3333/cards");
+    const { data } = await axios.get<ICard[]>('http://localhost:3333/cards');
     setCards(data);
   };
 
   const Quiz = () => {
-    const card = cards[cardNumber];
     return (
       <>
-        <QuestionList
-          headline={card.headline}
-          questions={card.questions}
-          setQuestionSelected={setIsQuestionSelected}
-        />
+        <Card cards={cards} setCards={setCards} cardNumber={cardNumber} setIsQuestionSelected={setIsQuestionSelected} />
         <OptionSet
           cards={cards}
           cardNumber={cardNumber}
-          questionSelected={isQuestionSelected}
+          isQuestionSelected={isQuestionSelected}
           setCardNumber={setCardNumber}
           setIsTestFinish={setIsTestFinish}
         />
