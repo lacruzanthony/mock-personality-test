@@ -1,16 +1,5 @@
-import Button from "../button";
-
-interface IResult {
-  randomNumber: boolean;
-  setCardNumber: (cardNumber: number) => void;
-  setIsTestFinish: (setIsTestFinish: boolean) => void;
-}
-
-interface IMessage {
-  msg: string;
-  setCardNumber: (cardNumber: number) => void;
-  setIsTestFinish: (setIsTestFinish: boolean) => void;
-}
+import { IMessage, IResult } from '../../interfaces';
+import Button from '../button';
 
 const Message = ({ msg, setCardNumber, setIsTestFinish }: IMessage) => {
   return (
@@ -29,17 +18,9 @@ const Message = ({ msg, setCardNumber, setIsTestFinish }: IMessage) => {
 
 const Result = ({ randomNumber, setCardNumber, setIsTestFinish }: IResult) =>
   randomNumber ? (
-    <Message
-      msg="You are more of an extrovert."
-      setCardNumber={setCardNumber}
-      setIsTestFinish={setIsTestFinish}
-    />
+    <Message msg="You are more of an extrovert." setCardNumber={setCardNumber} setIsTestFinish={setIsTestFinish} />
   ) : (
-    <Message
-      msg="You are more of an introvert."
-      setCardNumber={setCardNumber}
-      setIsTestFinish={setIsTestFinish}
-    />
+    <Message msg="You are more of an introvert." setCardNumber={setCardNumber} setIsTestFinish={setIsTestFinish} />
   );
 
 export default Result;
