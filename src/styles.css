@@ -1,4 +1,51 @@
+ul{
+  list-style: none;
+  margin-top: 5px;
+  padding: 0;
+}
+
+input[type="radio"]{
+  display: none;
+}
+
+button{
+  background-color: aqua;
+  padding: .6em;
+  margin: .8em;
+  border-radius: .4em;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: medium;
+  width: 12em;
+}
+
 .App {
   font-family: sans-serif;
   text-align: center;
+}
+
+.question{
+  box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  border: 1px solid rgb(230, 107, 80);
+  border-radius: 4px;
+  display: inline-block;
+  padding: .8em;
+  width: 40%;
+  margin-top: .8em;
+}
+
+.question-selected{
+  box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  border: 1px solid rgb(230, 107, 80);
+  border-radius: 4px;
+  background-color: violet;
+  padding: .8em;
+  display: inline-block;
+  width: 40%;
+  margin-top: 2%;
+}
+
+.question-list{
 }
