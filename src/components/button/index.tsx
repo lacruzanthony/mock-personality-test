@@ -1,8 +1,4 @@
-interface IButton {
-  content: string;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
-  disabled?: boolean;
-}
+import { IButton } from '../../interfaces';
 
 const Button = (props: IButton) => {
   const { content, ...rest } = props;
