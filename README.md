@@ -6,4 +6,4 @@ We select the answer and the 'Next >' button is activated, we click it and answe
 
 At the end, we could see our type of personality (is a random choice) and retake the test.
 
-![My project!](/src/assets/example.jpg "My project")
+![My project!](/src/assets/Example.png "My project")
