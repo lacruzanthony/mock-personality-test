@@ -17,7 +17,6 @@ export default function App() {
   const optionIsAlreadySelected = () => {
     const questions = document.getElementsByClassName('question-list') as HTMLCollection;
 
-    debugger;
     for (let i = 0; i < questions.length; i++) {
       const label = questions[i].lastChild as HTMLLabelElement;
       if (label.classList.contains('question-selected')) {
