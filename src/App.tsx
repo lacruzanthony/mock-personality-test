@@ -31,7 +31,7 @@ export default function App() {
   }, [cardNumber]);
 
   const onClickHandler = async () => {
-    const { data } = await axios.get<ICard[]>('http://localhost:3333/cards');
+    const { data } = await axios.get<ICard[]>('https://expressjs-mongoose-production-ded6.up.railway.app/cards');
     setCards(data);
   };
 
