@@ -31,7 +31,53 @@ export default function App() {
   }, [cardNumber]);
 
   const onClickHandler = async () => {
-    const { data } = await axios.get<ICard[]>('https://expressjs-mongoose-production-ded6.up.railway.app/cards');
+    const data = [
+      {
+        questionSelectedID: 0,
+        questions: [
+          {
+            id: 1,
+            content: 'Don’t dare contradict them'
+          },
+          {
+            id: 2,
+            content: 'Think that they are obviously right'
+          },
+          {
+            id: 3,
+            content: 'Defend your own point of view, tooth and nail'
+          },
+          {
+            id: 4,
+            content: 'Continuously interrupt your colleague'
+          }
+        ],
+        headline:
+          'You’re having an animated discussion with a colleague regarding a project that you’re in charge of. You:'
+      },
+      {
+        questionSelectedID: 0,
+        questions: [
+          {
+            id: 1,
+            content: 'Look at your watch every two minutes'
+          },
+          {
+            id: 2,
+            content: 'Bubble with inner anger, but keep quiet'
+          },
+          {
+            id: 3,
+            content: 'Explain to other equally impatient people in the room that the doctor is always running late'
+          },
+          {
+            id: 4,
+            content: 'Complain in a loud voice, while tapping your foot impatiently'
+          }
+        ],
+        headline: 'You’ve been sitting in the doctor’s waiting room for more than 25 minutes. You:'
+      }
+    ];
     setCards(data);
   };
 
