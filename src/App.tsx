@@ -30,7 +30,9 @@ export default function App() {
     setIsQuestionSelected(false || optionIsAlreadySelected());
   }, [cardNumber]);
 
-  const onClickHandler = async () => {
+  const onClickHandler = (e: React.SyntheticEvent) => {
+    const button = e.currentTarget as HTMLButtonElement;
+    button.disabled = true;
     const data = [
       {
         questionSelectedID: 0,
