@@ -1,9 +1,25 @@
-# Project to join Teamway community.
+# Personality test.
 
-## Starting the project.
+## Available Scripts
 
-* Install the dependencies in the root folder with: `yarn install`
-* Start the project: `yarn start`
+In the project directory, you can run:
+ 
+### `yarn install`
+
+Will add the dependencies-
+
+### `yarn start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
+### `yarn test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ## Checklist of requirements
 * ✅ Client in React, TypeScript and Jest.
@@ -25,4 +41,4 @@ In the end, we could see our type of personality (which is a random choice) and 
 ## Psychologies site:
 ![Site!](/src/assets/Copy.png "Site")
 
-Thanks for the time and patience in reading through my project for Teamway
+Thanks for the time and patience in reading through my project.
