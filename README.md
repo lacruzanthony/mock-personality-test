@@ -23,7 +23,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ## Checklist of requirements
 * ✅ Client in React, TypeScript and Jest.
-* ✅ Server with NodeJS, TypeScript, Mocha & Chai and MongoDB.
+* ✅ [Server](https://github.com/lacruzanthony/mock-personality-test-server) with NodeJS, TypeScript, Mocha & Chai and MongoDB.
 * ✅ Publications:
   * **Client**: Netlify.
   * **Server**: Railway.   
