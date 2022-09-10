@@ -1,5 +1,8 @@
 # Personality test.
 
+## Netlify URL
+https://admirable-longma-1cfd48.netlify.app/
+
 ## Available Scripts
 
 In the project directory, you can run:
